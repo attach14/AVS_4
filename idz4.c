@@ -193,6 +193,7 @@ int main(int argc, char* argv[]){
         if(ans[i] == 'a')
         continue;
         fputc(ans[i], out);
+        fputc(ans[i],stdout);
     }
     return 0;
 }
