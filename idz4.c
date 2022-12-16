@@ -9,7 +9,7 @@ char buff[100000]; // начальный текст
 char ans[200000]; // итоговый текст
 int buff_size; //размер начального текста
 int threadNumber = 8; //количество потоков
-void translate(void* param){
+void* translate(void* param){
     int task_size = (buff_size + threadNumber - 1) / threadNumber; //размер подстроки, которую меняет один поток
     int buff_start = (*(int*)param) * task_size; //начало этой подстроки в начальном тексте
     int ans_start = 2 * buff_start; //начальная позиция записи в ответ, она больше 2 раза так как один символ начального текста может превратиться в 2 символа ответа
